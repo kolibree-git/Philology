@@ -14,7 +14,7 @@ class CustomView @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
     private val textView: TextView by lazy {
-        findViewById<TextView>(R.id.text)
+        findViewById(R.id.text)
     }
 
     init {

@@ -1,19 +1,17 @@
-import com.jcminarro.Config
-import com.jcminarro.Dependencies
-
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply from: 'deploy.gradle'
+
+apply from: '../dependencies.gradle'
 
 android {
-    compileSdkVersion Config.compileSdkVersion
+    compileSdkVersion 32
 
     defaultConfig {
-        minSdkVersion Config.minSdkVersion
-        targetSdkVersion Config.targetSdkVersion
-        versionCode Config.versionCode
-        versionName Config.versionName
+        minSdkVersion 16
+        targetSdkVersion 32
+        versionCode 2
+        versionName "2.2.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -24,42 +22,34 @@ android {
         }
     }
 
-    testOptions{
-        unitTests{
+    testOptions {
+        unitTests {
             includeAndroidResources = true
-            all {
-                systemProperty 'robolectric.offline', 'true'
-                systemProperty 'robolectric.dependency.dir', "$rootDir/build/robolectricSdk"
-                testLogging {
-                    events 'passed', 'skipped', 'failed', 'standardOut', 'standardError'
-                }
-                setMaxParallelForks(Runtime.runtime.availableProcessors() ?: 1)
-            }
         }
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
 }
 
 dependencies {
-    implementation Dependencies.kotlinSTDLib
-    implementation Dependencies.appCompat
-    implementation Dependencies.viewPump
+    implementation libraries.kotlinSTDLib
+    implementation libraries.appCompat
+    implementation libraries.viewPump
 
-    testImplementation Dependencies.robolectric
-    testImplementation Dependencies.jUnit
-    testImplementation Dependencies.mockito
-    testImplementation Dependencies.mockitoKotlin
-    testImplementation Dependencies.kotlinTestJunit
-    testImplementation Dependencies.kluent
+    testImplementation libraries.robolectric
+    testImplementation libraries.jUnit
+    testImplementation libraries.mockito
+    testImplementation libraries.mockitoKotlin
+    testImplementation libraries.kotlinTestJunit
+    testImplementation libraries.kluent
 
-    androidTestImplementation Dependencies.AndroidTestRunner
-    androidTestImplementation Dependencies.espresso
+    androidTestImplementation libraries.AndroidTestRunner
+    androidTestImplementation libraries.espresso
 }
