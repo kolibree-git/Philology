@@ -27,7 +27,7 @@ android {
 dependencies {
     implementation project(":philology")
 
-    implementation libraries.kotlinSTDLib
+    implementation libraries.kotlinLib
     implementation libraries.appCompat
     implementation libraries.viewPump
 
@@ -38,6 +38,6 @@ dependencies {
     testImplementation libraries.kotlinTestJunit
     testImplementation libraries.kluent
 
-    androidTestImplementation libraries.AndroidTestRunner
+    androidTestImplementation libraries.androidTestRunner
     androidTestImplementation libraries.espresso
 }

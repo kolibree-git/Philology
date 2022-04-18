@@ -4,11 +4,21 @@ buildscript {
 
     repositories {
         google()
+        mavenCentral()
         jcenter()
+
+        maven {
+            url = kolibree_artifactory_url + "/libs-release"
+            credentials {
+                username kolibree_artifactory_username
+                password kolibree_artifactory_password
+            }
+        }
     }
     dependencies {
         classpath libraries.androidBuildToolGradlePlugin
         classpath libraries.kotlinGradlePlugin
+        classpath libraries.kolibreePublisher
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -18,6 +28,7 @@ buildscript {
 allprojects {
     repositories {
         google()
+        mavenCentral()
         jcenter()
     }
 }
