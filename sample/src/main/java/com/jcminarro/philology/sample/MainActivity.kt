@@ -30,7 +30,8 @@ class MainActivity : AppCompatActivity() {
         val pluralFormatLabel = findViewById<TextView>(R.id.plural_format_label)
         findViewById<EditText>(R.id.plural_quantity_format_edit).afterTextChanged { text: String ->
             text.toIntOrNull()?.let {
-                pluralFormatLabel.text = resources.getQuantityString(R.plurals.plurals_sample_format, it, it)
+                pluralFormatLabel.text =
+                    resources.getQuantityString(R.plurals.plurals_sample_format, it, it)
             }
         }
     }

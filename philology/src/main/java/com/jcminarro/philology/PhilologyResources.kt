@@ -2,12 +2,7 @@ package com.jcminarro.philology
 
 import android.annotation.SuppressLint
 import android.annotation.TargetApi
-import android.content.res.AssetFileDescriptor
-import android.content.res.ColorStateList
-import android.content.res.Configuration
-import android.content.res.Resources
-import android.content.res.TypedArray
-import android.content.res.XmlResourceParser
+import android.content.res.*
 import android.graphics.Movie
 import android.graphics.Typeface
 import android.graphics.drawable.Drawable

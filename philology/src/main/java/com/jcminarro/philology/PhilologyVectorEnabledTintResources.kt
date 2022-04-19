@@ -7,8 +7,9 @@ import androidx.appcompat.widget.VectorEnabledTintResources
 
 @SuppressWarnings("RestrictedApi")
 @SuppressLint("RestrictedApi")
-internal class PhilologyVectorEnabledTintResources(baseContext: Context, baseResources: Resources)
-    : VectorEnabledTintResources(baseContext, baseResources) {
+internal class PhilologyVectorEnabledTintResources(
+    baseContext: Context, baseResources: Resources
+) : VectorEnabledTintResources(baseContext, baseResources) {
     private val resourcesUtil = ResourcesUtil(baseResources)
 
     override fun getText(id: Int): CharSequence = resourcesUtil.getText(id)

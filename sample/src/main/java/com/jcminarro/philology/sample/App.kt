@@ -6,7 +6,7 @@ import com.jcminarro.philology.PhilologyInterceptor
 import com.jcminarro.philology.PhilologyRepository
 import com.jcminarro.philology.PhilologyRepositoryFactory
 import io.github.inflationx.viewpump.ViewPump
-import java.util.Locale
+import java.util.*
 
 class App : Application() {
 

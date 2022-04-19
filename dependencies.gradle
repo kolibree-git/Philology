@@ -1,0 +1,31 @@
+ext.versions = [
+        kotlin           : '1.5.31',
+        buildTools       : '7.0.4',
+        appCompat        : '1.0.0',
+        robolectric      : '3.8',
+        junit            : '4.12',
+        testRunner       : '1.0.2',
+        espresso         : '3.0.2',
+        mockito          : '2.18.0',
+        kluent           : '1.60',
+        mockitoKotlin    : '1.5.0',
+        viewPump         : '2.0.3',
+        kolibreePublisher: '1.0.7'
+]
+
+ext.libraries = [
+        kotlinGradlePlugin          : "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
+        androidBuildToolGradlePlugin: "com.android.tools.build:gradle:$versions.buildTools",
+        kotlinLib                   : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin",
+        appCompat                   : "androidx.appcompat:appcompat:$versions.appCompat",
+        robolectric                 : "org.robolectric:robolectric:$versions.robolectric",
+        jUnit                       : "junit:junit:$versions.junit",
+        androidTestRunner           : "com.android.support.test:runner:$versions.testRunner",
+        espresso                    : "com.android.support.test.espresso:espresso-core:$versions.espresso",
+        mockito                     : "org.mockito:mockito-core:$versions.mockito",
+        kotlinTestJunit             : "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin",
+        kluent                      : "org.amshove.kluent:kluent:$versions.kluent",
+        mockitoKotlin               : "com.nhaarman:mockito-kotlin:$versions.mockitoKotlin",
+        viewPump                    : "io.github.inflationx:viewpump:$versions.viewPump",
+        kolibreePublisher           : "com.kolibree.gradle:kolibree-publisher:$versions.kolibreePublisher"
+]

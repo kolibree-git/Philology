@@ -3,7 +3,7 @@ package com.jcminarro.philology
 import android.content.res.Resources
 import android.icu.text.PluralRules
 import android.os.Build
-import java.util.Locale
+import java.util.*
 
 internal class ResourcesUtil(private val baseResources: Resources) {
     private val repository: PhilologyRepository by lazy {
@@ -48,15 +48,17 @@ interface PhilologyRepository {
 }
 
 @SuppressWarnings("NewApi")
-private fun Resources.currentLocale(): Locale = if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.N) {
-    @Suppress("DEPRECATION")
-    configuration.locale
-} else {
-    configuration.locales[0]
-}
+private fun Resources.currentLocale(): Locale =
+    if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.N) {
+        @Suppress("DEPRECATION")
+        configuration.locale
+    } else {
+        configuration.locales[0]
+    }
 
-private fun Int.toPluralKeyword(baseResources: Resources): String = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-    PluralRules.forLocale(baseResources.currentLocale()).select(this.toDouble())
-} else {
-    baseResources.getQuantityString(R.plurals.com_jcminarro_philology_quantity_string, this)
-}
+private fun Int.toPluralKeyword(baseResources: Resources): String =
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+        PluralRules.forLocale(baseResources.currentLocale()).select(this.toDouble())
+    } else {
+        baseResources.getQuantityString(R.plurals.com_jcminarro_philology_quantity_string, this)
+    }
